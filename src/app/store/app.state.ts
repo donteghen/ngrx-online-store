@@ -1,7 +1,7 @@
 import { cartLine } from '../model/cart';
 import { Product } from './../model/product';
 
-export interface appState{
+export interface AppState{
     products:  ReadonlyArray<Product>,
-    cart : ReadonlyArray<cartLine>
+    cart : ReadonlyArray<string>
 }

@@ -1,5 +1,10 @@
 export interface Product {
-    id: string
-    name: string
-    price: number
+    id: string;
+    volumeInfo: {
+        title: string;
+        authors: Array<string>;
+    };
+    retailPrice: {
+        amount: number,
+      },
 }

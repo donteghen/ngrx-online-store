@@ -6,6 +6,9 @@ import { ProductsComponent } from './ui/products/products.component';
 import { ProductComponent } from './ui/product/product.component';
 import { CartComponent } from './ui/cart/cart.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { CartReducer, ProductReducer } from './store/reducer';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     CartComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule
+    BrowserModule,AppRoutingModule, HttpClientModule,
+    StoreModule.forRoot({products:ProductReducer, cart:CartReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

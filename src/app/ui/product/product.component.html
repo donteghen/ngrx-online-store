@@ -1,1 +1,18 @@
-<p>product works!</p>
+<div class="container-fluid">
+    <div class="col-sm-12" *ngIf="product">
+        <div class="card text-center">
+            <div class="card-header">
+              Book Details
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{product.volumeInfo.title}}</h5>
+              <p class="card-text">{{product.volumeInfo.subtitle}}</p>
+              <p class="card-text" *ngFor="let author of product.volumeInfo.authors"><span class="m-2">{{author}}</span></p>
+              <a (click)="addToCart(product.id)" class="btn btn-primary">Add To Cart</a>
+            </div>
+            <div class="card-footer text-muted">
+                Pub : {{product.volumeInfo.publishedDate}}
+            </div>
+          </div>
+    </div>
+</div>

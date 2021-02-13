@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<div class="container-fluid">
+    <h2>My Favorite Cart</h2>
+    <div class="col-sm-12 my-2">
+        <div class="list-group">
+            <div class="bg-warning py-4 text-center" *ngIf="count<1"><h3>Cart is empty :(</h3>
+                <button class="btn btn-primary my-2 p-2" routerLink="/">Add Some Items :)</button>
+            </div>
+            <a class="list-group-item list-group-item-action flex-column align-items-start"
+             *ngFor="let prod of cart$ | async">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{prod.volumeInfo.title}}</h5>
+                <small>{{prod.volumeInfo.pageCount || 0}} Pages</small>
+              </div>
+              <div><span class="m-1" *ngFor="let author of prod.volumeInfo.authors">{{author}}</span></div> 
+              <strong>Pub: {{prod.volumeInfo.publishedDate}}</strong>
+              <div class="my-2">
+                  <button (click)="removeFromCart(prod.id)" class="btn btn-danger " data-toggle="tooltip" data-placement="top" title="Click to delete item">Delete <i class="far fa-trash-alt"></i></button>
+              </div>
+            </a>
+        </div>
+    </div>
+</div>

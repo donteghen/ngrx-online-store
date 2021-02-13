@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { CartReducer, ProductReducer } from './store/reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule, HttpClientModule,
+    BrowserModule,AppRoutingModule, HttpClientModule,CommonModule,
     StoreModule.forRoot({products:ProductReducer, cart:CartReducer})
   ],
   providers: [],

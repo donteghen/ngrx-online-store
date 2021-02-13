@@ -1,1 +1,16 @@
-<p>products works!</p>
+<div class="container-fluid">
+    <h2>My Book List</h2>
+    <div class="col-sm-12 my-2">
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="tooltip" data-placement="top" title="Click to view details"
+             *ngFor="let prod of products$ | async" routerLink="/products/{{prod.id}}">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{prod.volumeInfo.title}}</h5>
+                <small>{{prod.volumeInfo.pageCount || 0}} Pages</small>
+              </div>
+              <div><span class="m-1" *ngFor="let author of prod.volumeInfo.authors">{{author}}</span></div> 
+              <strong>Pub: {{prod.volumeInfo.publishedDate}}</strong>
+            </a>
+        </div>
+    </div>
+</div>

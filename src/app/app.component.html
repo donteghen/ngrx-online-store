@@ -1,0 +1,9 @@
+<ul class="nav justify-content-end navbar navbar-primary bg-primary text-white">
+    <li class="nav-item" style="cursor: pointer;" routerLink="/">
+      <span class="nav-link active" >Home</span>
+    </li>
+    <li class="nav-item ml-2" style="cursor: pointer;" routerLink="/cart">
+      <span class="nav-link" >{{count || 0}} <i class="fas fa-cart-arrow-down"></i></span>
+    </li>
+  </ul>
+<router-outlet></router-outlet>
